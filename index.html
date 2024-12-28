@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Преступление и наказание</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Шапка -->
+    <header id="header" class="hidden">
+        <div class="logo">
+            <h1>Преступление и наказание</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#" data-page="description">Описание</a></li>
+                <li><a href="#" data-page="dictionary">Словарь</a></li>
+                <li><a href="#" data-page="gallery">Галерея</a></li>
+                <li><a href="#" data-page="test">Тест</a></li>
+                <li><a href="#" data-page="profile">Личный кабинет</a></li>
+            </ul>
+        </nav>
+        <button id="logout-btn" class="hidden">Выйти</button>
+    </header>
+
+    <!-- Авторизация -->
+    <section id="auth">
+        <div class="auth-container">
+            <h2>Авторизация</h2>
+            <form id="login-form" novalidate>
+                <label for="username">Логин:</label>
+                <input type="text" id="username" name="username" placeholder="Введите логин" required>
+                <span id="username-error" class="error-message"></span>
+
+                <label for="birthdate">Дата рождения:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+                <span id="birthdate-error" class="error-message"></span>
+
+                <label for="gender">Пол:</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Выберите пол</option>
+                    <option value="male">Мужской</option>
+                    <option value="female">Женский</option>
+                </select>
+                <span id="gender-error" class="error-message"></span>
+
+                <button type="submit" class="btn">Войти</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <main id="main-content" class="hidden">
+        <section id="description" class="page active">
+            <h2 class="description-title">Описание произведения</h2>
+            <div class="description-container">
+                <p>
+                    <strong>«Преступление и наказание»</strong> — знаменитый роман Фёдора Михайловича Достоевского, 
+                    исследующий вопросы морали, совести и человеческой психологии. 
+                    В центре сюжета — Родион Раскольников, бедный студент, который решается на убийство старухи-процентщицы, 
+                    чтобы проверить свою теорию: имеет ли человек право на преступление ради высших целей.
+                </p>
+                <p>
+                    После совершённого преступления он сталкивается с невыносимыми муками совести, которые заставляют его 
+                    пересмотреть свои взгляды на мир и мораль. Роман поднимает вопросы искупления, социальной несправедливости 
+                    и борьбы человека с самим собой.
+                </p>
+                <blockquote class="description-quote">
+                    «Я не старушонку убил, я себя убил!»
+                </blockquote>
+                <p class="description-conclusion">
+                    Это произведение остаётся актуальным и сегодня, заставляя читателей задуматься о природе добра и зла, 
+                    а также о границах дозволенного.
+                </p>
+            </div>
+        </section>
+
+        <section id="dictionary" class="page">
+            <h2 class="dictionary-title">Словарь событий</h2>
+        
+            <!-- Поле поиска -->
+            <div class="dictionary-search">
+                <input type="text" id="search-input" placeholder="Введите название события для поиска..." />
+            </div>
+        
+            <!-- Список событий -->
+            <ul id="event-list" class="dictionary-list">
+                <li data-event="crime">Преступление Раскольникова</li>
+                <li data-event="meeting-sonya">Встреча с Соней</li>
+                <li data-event="confession">Признание Раскольникова</li>
+                <li data-event="siberia">Ссылка в Сибирь</li>
+                <li data-event="redemption">Искупление</li>
+                <li data-event="mother">Письмо матери</li>
+            </ul>
+        
+            <!-- Поле с описанием -->
+            <div id="event-description" class="event-description">
+                <p>Выберите событие, чтобы увидеть его описание.</p>
+            </div>
+        </section>
+        
+
+        <section id="gallery" class="page">
+            <h2 class="gallery-title">Галерея</h2>
+        
+            <!-- Слайдер -->
+            <div class="slider">
+                <button id="prev-btn" class="slider-btn">←</button>
+        
+                <div class="slider-container">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="images/slide1.jpg" alt="Старуха-процентщица" />
+                            <p class="slide-caption">Книга</p>
+                        </div>
+                        <div class="slide">
+                            <img src="images/slide2.jpg" alt="Раскольников в Сибири" />
+                            <p class="slide-caption">Раскольников и Соня</p>
+                        </div>
+                        <div class="slide">
+                            <img src="images/slide3.jpg" alt="Встреча с Соней" />
+                            <p class="slide-caption">Старуха</p>
+                        </div>
+                        <div class="slide">
+                            <img src="images/slide4.jpg" alt="Признание Раскольникова" />
+                            <p class="slide-caption">Раскольников</p>
+                        </div>
+                        <div class="slide">
+                            <img src="images/slide5.jpg" alt="Искупление" />
+                            <p class="slide-caption">Пейзаж города</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <button id="next-btn" class="slider-btn">→</button>
+            </div>
+        
+            <!-- Индикатор текущего слайда -->
+            <div id="slider-indicator" class="slider-indicator">1 слайд из 5</div>
+        </section>
+
+        <section id="test" class="page">
+            <h2 class="test-title">Тест по произведению</h2>
+            <form id="test-form">
+                <!-- Вопрос 1 -->
+                <div class="question">
+                    <p>1. Кто автор произведения "Преступление и наказание"?</p>
+                    <input type="text" name="q1" placeholder="Введите ответ" required />
+                    <div class="feedback"></div>
+                </div>
+        
+                <!-- Вопрос 2 -->
+                <div class="question">
+                    <p>2. В каком году было опубликовано произведение?</p>
+                    <input type="number" name="q2" placeholder="Введите год" required />
+                    <div class="feedback"></div>
+                </div>
+        
+                <!-- Вопрос 3 -->
+                <div class="question">
+                    <p>3. Как зовут главного героя романа?</p>
+                    <select name="q3" required>
+                        <option value="">Выберите ответ</option>
+                        <option value="родион">Родион Раскольников</option>
+                        <option value="соня">Соня Мармеладова</option>
+                        <option value="свидригайлов">Свидригайлов</option>
+                    </select>
+                    <div class="feedback"></div>
+                </div>
+        
+                <!-- Вопрос 4 -->
+                <div class="question">
+                    <p>4. Сколько детей было у Мармеладова?</p>
+                    <input type="number" name="q4" placeholder="Введите количество" required />
+                    <div class="feedback"></div>
+                </div>
+        
+                <!-- Вопрос 5 -->
+                <div class="question">
+                    <p>5. Кто помогает Раскольникову найти искупление?</p>
+                    <select name="q5" required>
+                        <option value="">Выберите ответ</option>
+                        <option value="соня">Соня</option>
+                        <option value="луужин">Лужин</option>
+                        <option value="порфирий">Порфирий</option>
+                    </select>
+                    <div class="feedback"></div>
+                </div>
+        
+                <!-- Вопрос 6 -->
+                <div class="question">
+                    <p>6. Напишите, почему Раскольников убил старуху-процентщицу?</p>
+                    <input type="text" name="q6" placeholder="Введите причину" required />
+                    <div class="feedback"></div>
+                </div>
+        
+                <!-- Кнопки -->
+                <button type="button" id="check-btn" class="btn">Проверить ответы</button>
+                <button type="button" id="reset-btn" class="btn hidden">Пройти тест заново</button>
+        
+                <!-- Результат -->
+                <div id="test-result" class="hidden result"></div>
+            </form>
+        </section>
+        
+
+        <section id="profile" class="page">
+            <h2 class="profile-title">Личный кабинет</h2>
+        
+            <!-- Данные пользователя -->
+            <div class="user-info">
+                <p><strong>Логин:</strong> <span id="user-login">-</span></p>
+                <p><strong>Дата рождения:</strong> <span id="user-birthdate">-</span></p>
+                <p><strong>Пол:</strong> <span id="user-gender">-</span></p>
+            </div>
+        
+            <!-- Результат последнего теста -->
+            <div class="test-info">
+                <p><strong>Результат последнего теста:</strong> <span id="test-score">Нет данных</span></p>
+            </div>
+        
+            <!-- Кнопка выхода -->
+            <button id="logout-btn-profile" class="btn">Выход</button>
+        </section>
+        
+    </main>
+
+    <!-- Футер -->
+    <footer class="hidden">
+        <p>&copy; 2024 Преступление и наказание</p>
+        <p>Телефон: <a href="tel:+123456789">+1 (234) 567-89</a></p>
+        <p>Социальные сети:
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
+</body>
+</html>

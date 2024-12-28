@@ -1,0 +1,518 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Шапка */
+header {
+    background-color: #1f1f1f;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+header .logo h1 {
+    font-size: 24px;
+    color: #f1f1f1;
+}
+
+header nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+header nav ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #333;
+}
+
+#logout-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#logout-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Авторизация */
+#auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.auth-container {
+    background-color: #1f1f1f;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #f1f1f1;
+}
+
+.auth-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.auth-container input,
+.auth-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #121212;
+    color: #f1f1f1;
+    font-size: 14px;
+}
+
+.auth-container input:focus,
+.auth-container select:focus {
+    outline: none;
+    border-color: #0073e6;
+    box-shadow: 0 0 5px rgba(0, 115, 230, 0.5);
+}
+
+.auth-container .btn {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #0073e6;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-container .btn:hover {
+    background-color: #005bb5;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* Футер */
+footer {
+    background-color: #1f1f1f;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 15px 20px;
+    border-top: 1px solid #333;
+}
+
+footer a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #005bb5;
+}
+
+/* Страницы */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+/* Секция описания */
+#description {
+    padding: 20px;
+    background-color: #1f1f1f; /* Тёмный фон */
+    color: #f1f1f1; /* Светлый текст */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    max-width: 800px; /* Ограничиваем ширину */
+    line-height: 1.6;
+}
+
+/* Заголовок описания */
+.description-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #f1f1f1;
+    text-transform: uppercase;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Текстовое содержание */
+.description-container p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Выделение цитаты */
+.description-quote {
+    font-style: italic;
+    color: #ccc;
+    margin: 20px 0;
+    padding-left: 15px;
+    border-left: 4px solid #0073e6; /* Синяя линия для выделения цитаты */
+}
+
+/* Завершающий текст */
+.description-conclusion {
+    font-weight: bold;
+    font-size: 18px;
+    color: #f1f1f1;
+    text-align: center;
+}
+/* Секция словаря */
+#dictionary {
+    padding: 20px;
+    background-color: #1f1f1f; /* Тёмный фон */
+    color: #f1f1f1; /* Светлый текст */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+/* Заголовок словаря */
+.dictionary-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #f1f1f1;
+    text-transform: uppercase;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Поле поиска */
+.dictionary-search {
+    margin-bottom: 15px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #121212;
+    color: #f1f1f1;
+    font-size: 16px;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #0073e6;
+    box-shadow: 0 0 5px rgba(0, 115, 230, 0.5);
+}
+
+/* Список событий */
+.dictionary-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dictionary-list li {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #f1f1f1;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dictionary-list li:hover {
+    background-color: #333;
+}
+
+/* Поле описания события */
+.event-description {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #121212;
+    border: 1px solid #333;
+    color: #f1f1f1;
+}
+/* Секция галереи */
+#gallery {
+    padding: 20px;
+    background-color: #1f1f1f;
+    color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Заголовок галереи */
+.gallery-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Слайдер */
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+/* Слайды */
+.slider-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.slide-caption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Кнопки переключения */
+.slider-btn {
+    background-color: #0073e6;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-btn:hover {
+    background-color: #005bb5;
+}
+
+/* Индикатор текущего слайда */
+.slider-indicator {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: #ccc;
+}
+/* Секция теста */
+#test {
+    padding: 20px;
+    background-color: #1f1f1f;
+    color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Заголовок */
+.test-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Вопросы */
+.question {
+    margin-bottom: 20px;
+}
+
+.question p {
+    margin-bottom: 10px;
+}
+
+/* Поле ввода */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #121212;
+    color: #f1f1f1;
+    font-size: 16px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #0073e6;
+    box-shadow: 0 0 5px rgba(0, 115, 230, 0.5);
+}
+
+/* Кнопки */
+.btn {
+    padding: 10px 20px;
+    background-color: #0073e6;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #005bb5;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Результат */
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Отзывы по ответам */
+.feedback {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.feedback.correct {
+    color: #4caf50;
+}
+
+.feedback.incorrect {
+    color: #e74c3c;
+}
+/* Секция личного кабинета */
+#profile {
+    padding: 20px;
+    background-color: #1f1f1f;
+    color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Заголовок */
+.profile-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Информация пользователя */
+.user-info,
+.test-info {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.user-info p,
+.test-info p {
+    margin-bottom: 10px;
+}
+
+strong {
+    color: #0073e6;
+}
+
+/* Кнопка выхода */
+#logout-btn-profile {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#logout-btn-profile:hover {
+    background-color: #c0392b;
+}
